@@ -1,59 +1,10 @@
-from fastapi import FastAPI, File, HTTPException, UploadFile
-from pydantic import BaseModel, Field
-
-from app.services.ingest import ingest_file
-from app.services.rag import answer_question
-
-app = FastAPI(
-    title="FastAPI RAG Project",
-    version="0.1.0",
-)
+def embed_texts(texts: list[str]) -> list[list[float]]:
+    # TODO: Implement with actual embedding model (e.g., OpenAI, Ollama, etc.)
+    # For now, return dummy embeddings
+    return [[0.0] * 1536 for _ in texts]
 
 
-class AskRequest(BaseModel):
-    question: str = Field(..., min_length=1)
-    k: int = Field(default=4, ge=1, le=10)
-
-
-@app.get("/")
-def root():
-    return {
-        "message": "FastAPI RAG project is running.",
-        "docs": "/docs",
-    }
-
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
-
-@app.post("/ingest")
-async def ingest(file: UploadFile = File(...)):
-    try:
-        file_bytes = await file.read()
-
-        result = ingest_file(
-            filename=file.filename,
-            file_bytes=file_bytes,
-        )
-
-        return result
-
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-@app.post("/ask")
-def ask(payload: AskRequest):
-    try:
-        return answer_question(
-            question=payload.question,
-            k=payload.k,
-        )
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+def generate_answer(question: str, contexts: list) -> str:
+    # TODO: Implement with actual LLM (e.g., OpenAI, Ollama, etc.)
+    # For now, return a placeholder answer
+    return f"Answer to: {question}"

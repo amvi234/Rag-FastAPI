@@ -1,5 +1,5 @@
 Uses uv for package management and development:
-[UV reference link:-](https://docs.astral.sh/uv/)
+[UV reference link](https://docs.astral.sh/uv/)
 
 ## Run the server
 ```
