@@ -1,3 +1,7 @@
+# RAG Pipeline
+This includes Ingestion, Chunking, Embedding and Vector Storage.
+Uses Open source LLM models with LangChain.
+
 Uses uv for package management and development:
 [UV reference link](https://docs.astral.sh/uv/)
 
