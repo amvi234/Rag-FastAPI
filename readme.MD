@@ -9,6 +9,11 @@ Uses uv for package management and development:
 ```
 uv run fastapi dev app/main.py
 ```
+
+## Check the Data Flow and Services Details
+
+[SERVICE SPEC](docs/SERVICE_SPEC.md)
+
 ## RAG Pipeline Workflow
 
 ```mermaid
