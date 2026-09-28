@@ -39,3 +39,7 @@ flowchart TD
     H --> I
     I --> J
 ```
+
+## Screenshots
+![Ingest Pdf](image.png)
+![Ask Question](image-1.png)
