@@ -41,5 +41,5 @@ flowchart TD
 ```
 
 ## Screenshots
-![Ingest Pdf](image.png)
-![Ask Question](image-1.png)
+![Ingest Pdf](assets/image.png)
+![Ask Question](assets/image-1.png)
