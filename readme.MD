@@ -47,7 +47,3 @@ flowchart TD
     H --> I
     I --> J
 ```
-
-## Screenshots
-![Ingest Pdf](assets/image.png)
-![Ask Question](assets/image-1.png)
